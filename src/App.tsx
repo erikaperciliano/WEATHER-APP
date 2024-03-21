@@ -1,21 +1,23 @@
 import logo from './logo.png';
 import './App.css';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from './styles/themes/default';
+import { GlobalStyle } from './styles/global';
+import { Header } from './components/Header';
+import { DropdownMenu } from './components/DropdownMenu';
+import { DropdownMenuProvider } from './components/contexts/DropdownMenuContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          target="_blank"
-          className="App-link"
-          rel="noopener noreferrer"
-          href="https://www.leadzai.com/"
-        >
-          Weather App
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle/>
+      <DropdownMenuProvider>
+        <div className="App">
+          <Header title="Weather app"/>
+          <DropdownMenu />
+        </div>
+      </DropdownMenuProvider>
+    </ThemeProvider>
   );
 }
 
