@@ -1,4 +1,3 @@
-import logo from './logo.png';
 import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './styles/themes/default';
