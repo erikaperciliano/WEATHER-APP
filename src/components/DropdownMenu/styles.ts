@@ -23,6 +23,8 @@ export const SelectContainer = styled.select`
     left: 20px;
     border-radius: 10px;
 
+    cursor: pointer;
+
     option {
         background-color: ${props => props.theme["brown-100"]}; 
     }
