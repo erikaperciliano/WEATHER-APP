@@ -3,7 +3,7 @@ import { WeatherData } from '../../@types/weatherData';
 import { TemperatureToggleTitle, TemperatureDegree } from '../TemperatureToggle/styles';
 import { TemperatureToogle } from '../TemperatureToggle';
 import rainningWeather from '../../assets/weather-raining.png';
-import cloudWeather from '../../assets/weather-cloud.png';
+import cloudyWeather from '../../assets/weather-cloudy.png';
 import sunnyWeather from '../../assets/weather-sunny.png';
 
 import { SunriseSunset } from '../SunriseSunset/indext';
@@ -47,22 +47,23 @@ export function CityWeather({ city }: CityWeatherProps) {
 
     const temperature = main.temp; // Access temp from main
     const icon = weather[0].icon; // Access icon from weather array
+  
 
-     // Mapping of weather condition codes to corresponding image URLs
+    // Mapping of weather condition codes to corresponding image URLs
      const weatherIcons = {
         '01': sunnyWeather,
-        '02': cloudWeather,
-        '03': cloudWeather,
-        '04': cloudWeather,
+        '02': cloudyWeather,
+        '03': cloudyWeather,
+        '04': cloudyWeather,
         '09': rainningWeather,
         '10': rainningWeather,
         '11': rainningWeather,
         '13': rainningWeather,
-        '50': cloudWeather,
+        '50': cloudyWeather,
     };
 
     const iconCode = icon.substring(0, 2) as keyof typeof weatherIcons; // Extracting the first two characters of the icon code
-
+    console.log('iconCode: ', iconCode)
     const temperatureInCelsius = isCelsius
         ? temperature.toFixed(2).slice(0, 2)
         : ((temperature * 9) / 5 + 32).toFixed(2).slice(0, 2);

@@ -11,6 +11,7 @@ export function DropdownMenu({ onCityChange, selectedCity }: DropdownMenuProps) 
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onCityChange(e.target.value)
   }
+  
   return (
     <MenuContainer>
       <SelectContainer value={selectedCity} onChange={handleCityChange}>
